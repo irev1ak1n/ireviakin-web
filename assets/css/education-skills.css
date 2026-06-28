@@ -1,0 +1,136 @@
+.certs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.certs-row {
+    display: grid;
+    gap: 20px;
+}
+
+.certs-row-diplomas {
+    grid-template-columns: 1fr 1fr;
+}
+
+.certs-row-transcripts {
+    grid-template-columns: 1fr 1fr;
+}
+
+.cert-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.cert-card:hover {
+    transform: translateY(-6px);
+    background: var(--panel-strong);
+    border-color: rgba(214, 92, 255, 0.25);
+}
+
+.cert-img-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: rgba(255,255,255,0.03);
+}
+
+.cert-img-landscape {
+    aspect-ratio: 4 / 3;
+}
+
+.cert-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.4s ease;
+}
+
+.cert-card:hover .cert-img-wrap img {
+    transform: scale(1.04);
+}
+
+.cert-info {
+    padding: 16px 18px;
+}
+
+.cert-name {
+    color: var(--text) !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 6px !important;
+}
+
+.cert-meta {
+    color: var(--accent) !important;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-top: 40px;
+}
+
+.skill-group {
+    text-align: center;
+}
+
+.skill-group h3 {
+    margin-bottom: 28px;
+    font-size: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.04em;
+}
+
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 14px 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 88px;
+    transition: 0.2s ease;
+    cursor: default;
+}
+
+.skill-item:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(214, 92, 255, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(214, 92, 255, 0.12);
+}
+
+.skill-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.skill-item span {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}

@@ -10,16 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/global.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+    <link rel="stylesheet" href="assets/css/education-skills.css" />
+    <link rel="stylesheet" href="assets/css/contact-responsive.css" />
 </head>
 <body>
+
 <header class="site-header">
     <div class="container nav">
         <a href="#" class="brand">Illia Reviakin</a>
-
         <nav class="nav-links">
-            <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -27,33 +30,59 @@
 </header>
 
 <main>
+
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="container hero-inner">
-            <p class="eyebrow">Developer Portfolio</p>
-            <h1>Building clean websites and real-world projects</h1>
-            <p class="hero-text">
-                Personal portfolio website made to showcase my projects, education, skills, and experience in web/software development and other projects.
-            </p>
+            <div class="hero-content">
+                <div class="hero-text-side">
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="stat-body">
+                                <p class="stat-title"><span class="countup" data-target="9">0</span>+ Years Experience</p>
+                                <p class="stat-sub">Hands-on development</p>
+                            </div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-body">
+                                <p class="stat-title">
+                                    <span class="flag-row">
+                                        <img src="https://flagcdn.com/w20/us.png" alt="English" title="English" />
+                                        <img src="https://flagcdn.com/w20/ru.png" alt="Russian" title="Russian" />
+                                        <img src="https://flagcdn.com/w20/ua.png" alt="Ukrainian" title="Ukrainian" />
+                                    </span>
+                                    <span class="countup" data-target="3">0</span> Languages
+                                </p>
+                                <p class="stat-sub">English · Russian · Ukrainian</p>
+                            </div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-body">
+                                <p class="stat-title">
+                                    <img src="assets/img/academy.png" alt="IT STEP Academy" class="academy-logo" />
+                                    IT STEP Academy
+                                </p>
+                                <p class="stat-sub">Computer Science Education</p>
+                            </div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-body">
+                                <p class="stat-title">Charlotte, NC</p>
+                                <p class="stat-sub">Available for opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
 
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-head">
-                <p class="section-label">About</p>
-                <h2>About Me</h2>
-            </div>
-
-            <div class="about-card">
-                <p>
-                    I am a student developer interested in web and software development.
-                </p>
+                <div class="hero-image-side">
+                    <div class="hero-oval">
+                        <img src="assets/img/3.jpg" alt="Illia Reviakin" />
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -64,31 +93,143 @@
                 <p class="section-label">Portfolio</p>
                 <h2>Featured Projects</h2>
             </div>
+            <div class="projects-grid projects-single">
 
-            <div class="projects-grid">
                 <article class="project-card">
-                    <span class="project-tag">Web Design</span>
-                    <h3>BRHS Prom 2026 Website</h3>
-                    <p>
-                        Website created to organize and promote Prom '26 in BRHS. Intended functionality of the website is helping students access tickets, event details, and important updates in one place.
-                    </p>
+                    <div class="project-preview">
+                        <img src="assets/img/projects/brhs-yearbook/home.png" alt="BRHS Yearbook - Home" class="project-preview-img" />
+                        <div class="project-preview-overlay">
+                            <a href="https://www.brhsyearbook.com" target="_blank" class="project-preview-btn">Visit Site</a>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-top">
+                            <span class="project-tag">Web Design</span>
+                            <a href="https://www.brhsyearbook.com" target="_blank" class="project-live">
+                                <span class="live-dot"></span>
+                                Live Site
+                            </a>
+                        </div>
+                        <h3>Ballantyne Ridge High School – Yearbook</h3>
+                        <ul class="project-bullets">
+                            <li>Assisted the yearbook club adviser by building a website to help students explore pricing, browse photos, and engage more with the yearbook program</li>
+                            <li>Featured dedicated sections for athletic highlights from games, student life photo dumps, and a page honoring the graduating senior class</li>
+                            <li>Contributed to promoting the yearbook by creating school-wide announcements and promotional materials to boost student awareness and drive sales</li>
+                        </ul>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="project-stat-coming">Coming Soon</span>
+                                <span class="project-stat-label">Stats</span>
+                            </div>
+                            <div class="project-stat project-stat-tech">
+                                <div class="project-tech-icons">
+                                    <img src="assets/img/icons/html.png" alt="HTML" title="HTML" />
+                                    <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
+                                    <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
+                                </div>
+                                <span class="project-stat-label">Made with</span>
+                            </div>
+                        </div>
+                    </div>
                 </article>
 
                 <article class="project-card">
-                    <span class="project-tag">Community</span>
-                    <h3>Charlotte Community Resource Hub</h3>
-                    <p>
-                        Community website for the Technology Student Association (TSA) Webmaster competition. It's intended to help residents of Charlotte to find trusted local resources, programs, events, and support services through a clean, realistic design that looks like a real public website
-                    </p>
+                    <div class="project-preview">
+                        <img src="assets/img/projects/brhs-prom-2026/home.png" alt="BRHS Prom - Home" class="project-preview-img" />
+                        <div class="project-preview-overlay">
+                            <a href="https://www.brhsprom26.com" target="_blank" class="project-preview-btn">Visit Site</a>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-top">
+                            <span class="project-tag">Web Design</span>
+                            <a href="https://www.brhsprom26.com" target="_blank" class="project-live">
+                                <span class="live-dot"></span>
+                                Live Site
+                            </a>
+                        </div>
+                        <h3>Ballantyne Ridge High School – Prom 2026</h3>
+                        <ul class="project-bullets">
+                            <li>Collaborated with the prom committee on event setup and decorations</li>
+                            <li>Designed and built a fully functional website that centralized event information, updates, FAQs, and ticket purchasing</li>
+                            <li>Contributed to promoting the event by creating school-wide announcements and promotional materials to boost student awareness and engagement</li>
+                        </ul>
+                        <div class="project-stats">
+                            <div class="project-stat">
+                                <span class="project-stat-num">500+</span>
+                                <span class="project-stat-label">People reached</span>
+                            </div>
+                            <div class="project-stat">
+                                <span class="project-stat-num">250/250</span>
+                                <span class="project-stat-label">Tickets sold out</span>
+                            </div>
+                            <div class="project-stat project-stat-tech">
+                                <div class="project-tech-icons">
+                                    <img src="assets/img/icons/laravel-logo.png" alt="Blade" title="Blade (Laravel)" />
+                                    <img src="assets/img/icons/php.png" alt="PHP" title="PHP" />
+                                    <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
+                                    <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
+                                </div>
+                                <span class="project-stat-label">Made with</span>
+                            </div>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="project-card">
-                    <span class="project-tag">Software</span>
-                    <h3>Assistive Communication App</h3>
-                    <p>
-                        A communication app designed to support individuals who cannot hear or speak, improving communication in everyday situations such as school, public places, and emergencies.
-                    </p>
-                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-label">Education</p>
+                <h2>Certifications</h2>
+            </div>
+            <div class="certs-grid">
+
+                <div class="certs-row certs-row-diplomas">
+                    <div class="cert-card cert-card-wide">
+                        <div class="cert-img-wrap cert-img-landscape">
+                            <img src="assets/img/certs/junior.png" alt="Junior Computer Academy Diploma" />
+                        </div>
+                        <div class="cert-info">
+                            <p class="cert-name">Junior Computer Academy STEP</p>
+                            <p class="cert-meta">DNMA-024885 &nbsp;·&nbsp; 2019 – 2022</p>
+                        </div>
+                    </div>
+                    <div class="cert-card cert-card-wide">
+                        <div class="cert-img-wrap cert-img-landscape">
+                            <img src="assets/img/certs/senior.jpg" alt="Software Development Diploma" />
+                        </div>
+                        <div class="cert-info">
+                            <p class="cert-name">Software Development Diploma</p>
+                            <p class="cert-meta">DN-251015 &nbsp;·&nbsp; 2022 – 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certs-row certs-row-transcripts">
+                    <div class="cert-card">
+                        <div class="cert-img-wrap">
+                            <img src="assets/img/certs/junior-courses.jpg" alt="Junior Academy Course List" />
+                        </div>
+                        <div class="cert-info">
+                            <p class="cert-name">Junior Academy – Course Transcript</p>
+                            <p class="cert-meta">DNMA-024885 &nbsp;·&nbsp; 2019 – 2022</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-img-wrap">
+                            <img src="assets/img/certs/senior-courses.jpg" alt="Software Development Course List" />
+                        </div>
+                        <div class="cert-info">
+                            <p class="cert-name">Software Development – Course Transcript</p>
+                            <p class="cert-meta">DN-251015 &nbsp;·&nbsp; 2022 – 2025</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -99,54 +240,71 @@
                 <p class="section-label">Skills</p>
                 <h2>Technologies I Use</h2>
             </div>
-
             <div class="skills-grid">
+
                 <article class="skill-group">
                     <h3>Front-End</h3>
                     <div class="skill-items">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                        <div class="skill-item"><img src="assets/img/icons/html.png" alt="HTML" /><span>HTML</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/css-3.png" alt="CSS" /><span>CSS</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/java-script.png" alt="JavaScript" /><span>JavaScript</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/react.png" alt="React" /><span>React</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/angular.png" alt="Angular" /><span>Angular</span></div>
                     </div>
                 </article>
 
                 <article class="skill-group">
                     <h3>Back-End / Database</h3>
                     <div class="skill-items">
-                        <span>PHP</span>
-                        <span>Laravel</span>
-                        <span>ASP.NET</span>
-                        <span>MySQL</span>
+                        <div class="skill-item"><img src="assets/img/icons/node-js.png" alt="Node.js" /><span>Node.js</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/php.png" alt="PHP" /><span>PHP</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/laravel-logo.png" alt="Laravel" /><span>Laravel</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/net.png" alt="ASP.NET" /><span>ASP.NET</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/wordpress.png" alt="WordPress" /><span>WordPress</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/database.png" alt="MySQL" /><span>MySQL</span></div>
                     </div>
                 </article>
 
                 <article class="skill-group">
                     <h3>Software Development</h3>
                     <div class="skill-items">
-                        <span>C++</span>
-                        <span>C#</span>
-                        <span>Python</span>
+                        <div class="skill-item"><img src="assets/img/icons/c-.png" alt="C++" /><span>C++</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/c-sharp.png" alt="C#" /><span>C#</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/python.png" alt="Python" /><span>Python</span></div>
+                        <div class="skill-item"><img src="assets/img/icons/java.png" alt="Java" /><span>Java</span></div>
                     </div>
                 </article>
+
             </div>
         </div>
     </section>
 
-<!--    <section id="contact" class="section contact-section">-->
-<!--        <div class="container">-->
-<!--            <div class="section-head">-->
-<!--                <p class="section-label">Contact</p>-->
-<!--                <h2>Let’s Connect</h2>-->
-<!--            </div>-->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-head">
+                <p class="section-label">Contact</p>
+                <h2>Let's Connect</h2>
+            </div>
+            <div class="contact-card">
+                <p>Available for freelance work, collaboration, and opportunities. Feel free to reach out through any of the channels below.</p>
+                <div class="contact-links">
+                    <a href="mailto:illiareviakin2008@gmail.com" class="contact-link">
+                        <img src="assets/img/icons/mail.png" alt="Email" />
+                        <span>illiareviakin2008@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/illia-reviakin-12b951322/" target="_blank" class="contact-link">
+                        <img src="assets/img/icons/linkedin.png" alt="LinkedIn" />
+                        <span>Illia Reviakin</span>
+                    </a>
+                    <a href="https://github.com/irev1ak1n" target="_blank" class="contact-link">
+                        <img src="assets/img/icons/github.png" alt="GitHub" />
+                        <span>irev1ak1n</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!--            <div class="contact-card">-->
-<!--                <p>-->
-<!--                    You can explore my work, view my projects, and contact me for collaboration, opportunities, or freelance work.-->
-<!--                </p>-->
-<!--                <a href="https://github.com/irev1ak1n" target="_blank" class="btn btn-primary">GitHub</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
 </main>
 
 <script src="assets/js/main.js"></script>

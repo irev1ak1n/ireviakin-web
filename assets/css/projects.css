@@ -1,0 +1,293 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.projects-single {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch;
+}
+
+.projects-single .project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-single .project-card .project-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.projects-single .project-card .project-stats {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.project-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    transition: 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    background: var(--panel-strong);
+}
+
+.project-card-body {
+    padding: 0;
+}
+
+.project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.project-card-top .project-tag {
+    margin-bottom: 0;
+}
+
+.project-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(214, 92, 255, 0.12);
+    color: #eed4ff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.35rem;
+}
+
+.project-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #7dffb3;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(125, 255, 179, 0.08);
+    border: 1px solid rgba(125, 255, 179, 0.2);
+    transition: 0.2s ease;
+}
+
+.project-live:hover {
+    background: rgba(125, 255, 179, 0.15);
+    border-color: rgba(125, 255, 179, 0.4);
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #7dffb3;
+    box-shadow: 0 0 6px #7dffb3;
+    animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+.project-preview {
+    position: relative;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+}
+
+.project-preview-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.project-preview:hover .project-preview-overlay {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.project-preview:hover .project-preview-img {
+    transform: scale(1.03);
+    filter: blur(1px);
+}
+
+.project-preview-btn {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: #fff;
+    color: #0a0a0f;
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.project-preview:hover .project-preview-btn {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.project-bullets {
+    margin: 12px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.project-bullets li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 7px;
+}
+
+.project-stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.project-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.project-stat-num {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    background: linear-gradient(135deg, var(--accent), var(--accent-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.project-stat-label {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.project-stat-coming {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 5px 10px;
+    line-height: 1;
+}
+
+.project-stat-tech {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.project-tech-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project-tech-icons img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.project-preview-wrap {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0a0a0f;
+}
+
+.project-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.project-iframe-overlay-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 7px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.project-iframe-overlay-btn:hover {
+    background: rgba(214, 92, 255, 0.2);
+    border-color: rgba(214, 92, 255, 0.4);
+}
