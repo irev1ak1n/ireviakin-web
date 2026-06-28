@@ -31,6 +31,7 @@
 
 <main>
 
+
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="container hero-inner">
@@ -80,12 +81,22 @@
 
                 <div class="hero-image-side">
                     <div class="hero-oval">
-                        <img src="assets/img/3.jpg" alt="Illia Reviakin" />
+                        <img src="assets/img/1.jpg" alt="Illia Reviakin" />
                     </div>
                 </div>
             </div>
         </div>
+        <canvas class="hero-particles" aria-hidden="true"></canvas>
+        <a href="#projects" class="hero-explore">
+            <span class="hero-explore-label">Explore</span>
+            <span class="hero-explore-arrow">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 3.5V14.5M9 14.5L4 9.5M9 14.5L14 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </a>
     </section>
+
 
     <section id="projects" class="section">
         <div class="container">
@@ -94,6 +105,7 @@
                 <h2>Featured Projects</h2>
             </div>
             <div class="projects-grid projects-single">
+
 
                 <article class="project-card">
                     <div class="project-preview">
@@ -132,6 +144,7 @@
                         </div>
                     </div>
                 </article>
+
 
                 <article class="project-card">
                     <div class="project-preview">
@@ -179,6 +192,7 @@
             </div>
         </div>
     </section>
+
 
     <section id="education" class="section">
         <div class="container">
@@ -234,6 +248,7 @@
         </div>
     </section>
 
+
     <section id="skills" class="section">
         <div class="container">
             <div class="section-head">
@@ -279,6 +294,7 @@
         </div>
     </section>
 
+
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="section-head">
@@ -286,19 +302,37 @@
                 <h2>Let's Connect</h2>
             </div>
             <div class="contact-card">
-                <p>Available for freelance work, collaboration, and opportunities. Feel free to reach out through any of the channels below.</p>
+                <div class="contact-intro">
+                    <h3 class="contact-heading">Have a project in mind?</h3>
+                    <p>I'm open to freelance work, collaboration, and new opportunities. Reach out through any of the channels below and I'll get back to you soon.</p>
+                </div>
                 <div class="contact-links">
                     <a href="mailto:illiareviakin2008@gmail.com" class="contact-link">
-                        <img src="assets/img/icons/mail.png" alt="Email" />
-                        <span>illiareviakin2008@gmail.com</span>
+                        <span class="contact-link-icon">
+                            <img src="assets/img/icons/mail.png" alt="Email" />
+                        </span>
+                        <span class="contact-link-text">
+                            <span class="contact-link-label">Email</span>
+                            <span class="contact-link-value">illiareviakin2008@gmail.com</span>
+                        </span>
                     </a>
                     <a href="https://www.linkedin.com/in/illia-reviakin-12b951322/" target="_blank" class="contact-link">
-                        <img src="assets/img/icons/linkedin.png" alt="LinkedIn" />
-                        <span>Illia Reviakin</span>
+                        <span class="contact-link-icon">
+                            <img src="assets/img/icons/linkedin.png" alt="LinkedIn" />
+                        </span>
+                        <span class="contact-link-text">
+                            <span class="contact-link-label">LinkedIn</span>
+                            <span class="contact-link-value">Illia Reviakin</span>
+                        </span>
                     </a>
                     <a href="https://github.com/irev1ak1n" target="_blank" class="contact-link">
-                        <img src="assets/img/icons/github.png" alt="GitHub" />
-                        <span>irev1ak1n</span>
+                        <span class="contact-link-icon">
+                            <img src="assets/img/icons/github.png" alt="GitHub" />
+                        </span>
+                        <span class="contact-link-text">
+                            <span class="contact-link-label">GitHub</span>
+                            <span class="contact-link-value">irev1ak1n</span>
+                        </span>
                     </a>
                 </div>
             </div>
@@ -306,6 +340,12 @@
     </section>
 
 </main>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 14.5V3.5M9 3.5L4 8.5M9 3.5L14 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</button>
 
 <script src="assets/js/main.js"></script>
 </body>
