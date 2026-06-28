@@ -185,16 +185,26 @@ p {
 
 .bonfire-zone {
     position: relative;
-    background:
-            linear-gradient(
-                    to bottom,
-                    #020307 0%,
-                    #0a0604 26%,
-                    #140805 52%,
-                    #24100a 74%,
-                    #3a160c 90%,
-                    #4a1c0e 100%
-            );
+    overflow: hidden;
+    background: #0c1626;
+}
+
+.bonfire-zone::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: url('../img/background/bg4.png') center top / 100% 100% no-repeat;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+.bonfire-zone::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 7, 18, 0.34);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .bonfire-canvas {
