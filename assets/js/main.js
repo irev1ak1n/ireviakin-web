@@ -1,23 +1,49 @@
+function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+}
+
+function animateCountup(el) {
+    const target = parseInt(el.getAttribute('data-target'));
+    const duration = 3200;
+    const start = performance.now();
+
+    function frame(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutExpo(progress);
+        const current = Math.round(eased * target);
+        el.textContent = current;
+
+        if (el.classList.contains('countup-scale')) {
+            const scale = 1 + (1 - eased) * 0.06;
+            el.style.transform = `scale(${scale})`;
+        }
+
+        if (progress < 1) {
+            requestAnimationFrame(frame);
+        } else {
+            el.textContent = target;
+            el.style.transform = '';
+        }
+    }
+
+    requestAnimationFrame(frame);
+}
+
 const countups = document.querySelectorAll('.countup');
-const observer = new IntersectionObserver((entries) => {
+const countupObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.getAttribute('data-target'));
-            const duration = 1200;
-            const step = Math.ceil(duration / target);
-            let current = 0;
-            const timer = setInterval(() => {
-                current++;
-                el.textContent = current;
-                if (current >= target) clearInterval(timer);
-            }, step);
-            observer.unobserve(el);
+            animateCountup(entry.target);
+            countupObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.4 });
 
-countups.forEach(el => observer.observe(el));
+countups.forEach(el => {
+    el.classList.add('countup-scale');
+    countupObserver.observe(el);
+});
 
 const contactLinks = document.querySelectorAll('#contact .contact-link');
 const contactLinksWrap = document.querySelector('.contact-links');
@@ -149,3 +175,195 @@ if (backToTop) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+const scrollProgressEl = document.getElementById('scrollProgress');
+if (scrollProgressEl) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        scrollProgressEl.style.width = (scrolled / total * 100) + '%';
+    }, { passive: true });
+}
+
+(function () {
+    const canvas = document.querySelector('.contact-particles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, pts = [];
+
+    function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    function createPt() {
+        return {
+            x: rand(0, W),
+            y: rand(H * 0.3, H),
+            size: rand(0.4, 1.3),
+            vy: rand(0.28, 0.72),
+            vx: rand(-0.18, 0.18),
+            opacity: rand(0.18, 0.52),
+            life: 0,
+            maxLife: rand(130, 300),
+            flicker: rand(0, Math.PI * 2),
+        };
+    }
+
+    for (let i = 0; i < 70; i++) {
+        const p = createPt();
+        p.life = rand(0, p.maxLife);
+        pts.push(p);
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        pts.forEach((p, i) => {
+            p.life++;
+            p.y -= p.vy;
+            p.x += p.vx + Math.sin(p.flicker + p.life * 0.035) * 0.15;
+            p.flicker += 0.035;
+
+            const progress = p.life / p.maxLife;
+            const fadeIn = Math.min(progress * 5, 1);
+            const fadeOut = Math.max(1 - (progress - 0.65) * 2.8, 0);
+            const alpha = p.opacity * fadeIn * fadeOut;
+            const r = p.size * 1.8;
+
+            const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
+            g.addColorStop(0,    `rgba(255, 185, 80,  ${alpha})`);
+            g.addColorStop(0.45, `rgba(255, 120, 30,  ${alpha * 0.5})`);
+            g.addColorStop(1,    `rgba(200, 60,  10,  0)`);
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+            ctx.fillStyle = g;
+            ctx.fill();
+
+            if (p.life >= p.maxLife) {
+                pts[i] = createPt();
+                pts[i].life = 0;
+            }
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+(function () {
+    const canvas = document.querySelector('.bonfire-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const zone = canvas.parentElement;
+    let W, H, embers = [], glows = [];
+
+    function resize() {
+        W = canvas.width = zone.offsetWidth;
+        H = canvas.height = zone.offsetHeight;
+        buildGlows();
+    }
+
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    function buildGlows() {
+        glows = [];
+        const count = Math.max(4, Math.round(W / 320));
+        for (let i = 0; i < count; i++) {
+            glows.push({
+                x: rand(0.1, 0.9),
+                r: rand(180, 340),
+                phase: rand(0, Math.PI * 2),
+                speed: rand(0.004, 0.009),
+            });
+        }
+    }
+
+    function createEmber() {
+        const startY = rand(0.86, 1.02);
+        return {
+            x: rand(0, 1),
+            y: startY,
+            startY,
+            topY: rand(0.0, 0.5),
+            size: rand(0.6, 2.0),
+            speed: rand(0.0006, 0.0016),
+            drift: rand(-0.0004, 0.0004),
+            flicker: rand(0, Math.PI * 2),
+            opacity: rand(0.4, 0.95),
+        };
+    }
+
+    let emberCount = 0;
+    function init() {
+        emberCount = Math.round(W / 9);
+        emberCount = Math.min(emberCount, 220);
+        embers = [];
+        for (let i = 0; i < emberCount; i++) {
+            const e = createEmber();
+            e.y = rand(e.topY, e.startY);
+            embers.push(e);
+        }
+    }
+
+    resize();
+    init();
+    window.addEventListener('resize', () => { resize(); init(); }, { passive: true });
+
+    let t = 0;
+    function draw() {
+        t += 1;
+        ctx.clearRect(0, 0, W, H);
+
+        ctx.globalCompositeOperation = 'lighter';
+
+        glows.forEach(g => {
+            const pulse = 0.6 + Math.sin(t * g.speed + g.phase) * 0.4;
+            const gx = g.x * W;
+            const gy = H - rand(0, 0) - 8;
+            const grad = ctx.createRadialGradient(gx, H + 40, 0, gx, H + 40, g.r * pulse);
+            grad.addColorStop(0,   `rgba(255, 140, 40, ${0.16 * pulse})`);
+            grad.addColorStop(0.5, `rgba(255, 90, 20, ${0.08 * pulse})`);
+            grad.addColorStop(1,   `rgba(180, 40, 5, 0)`);
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, H - g.r * pulse, W, g.r * pulse + 60);
+        });
+
+        embers.forEach((e, i) => {
+            e.y -= e.speed;
+            e.x += e.drift + Math.sin(e.flicker + e.y * 14) * 0.0004;
+            e.flicker += 0.04;
+
+            const range = e.startY - e.topY;
+            const traveled = (e.startY - e.y) / range;
+            const fade = Math.sin(Math.min(Math.max(traveled, 0), 1) * Math.PI);
+
+            const heightFactor = Math.min(Math.max((e.y - 0.15) / 0.85, 0), 1);
+            const alpha = e.opacity * fade * (0.35 + heightFactor * 0.65);
+
+            const px = e.x * W;
+            const py = e.y * H;
+            const r = e.size * (0.8 + heightFactor * 1.4);
+
+            const grad = ctx.createRadialGradient(px, py, 0, px, py, r * 2.2);
+            grad.addColorStop(0,   `rgba(255, 220, 130, ${alpha})`);
+            grad.addColorStop(0.4, `rgba(255, 140, 40, ${alpha * 0.6})`);
+            grad.addColorStop(1,   `rgba(220, 60, 10, 0)`);
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(px, py, r * 2.2, 0, Math.PI * 2);
+            ctx.fill();
+
+            if (e.y <= e.topY) {
+                embers[i] = createEmber();
+            }
+        });
+
+        ctx.globalCompositeOperation = 'source-over';
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();

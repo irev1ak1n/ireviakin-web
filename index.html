@@ -17,12 +17,16 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <header class="site-header">
     <div class="container nav">
-        <a href="#" class="brand">Illia Reviakin</a>
-        <nav class="nav-links">
+        <nav class="nav-links nav-links-left">
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
+        </nav>
+        <a href="#" class="brand">Illia Reviakin</a>
+        <nav class="nav-links nav-links-right">
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -38,44 +42,19 @@
             <div class="hero-content">
                 <div class="hero-text-side">
                     <div class="hero-stats">
-                        <div class="hero-stat">
-                            <div class="stat-body">
-                                <p class="stat-title"><span class="countup" data-target="9">0</span>+ Years Experience</p>
-                                <p class="stat-sub">Hands-on development</p>
+                        <div class="hero-stat hero-stat-exp">
+                            <div class="stat-exp-number">
+                                <span class="countup" data-target="9">0</span><span class="stat-exp-plus">+</span>
+                            </div>
+                            <div class="stat-exp-label">Years of hands-on<br>experience</div>
+                        </div>
+                        <div class="hero-stat hero-stat-academy">
+                            <img src="assets/img/academy.png" alt="IT STEP Academy" class="academy-logo-big" />
+                            <div class="stat-academy-text">
+                                <span class="stat-academy-name">IT STEP Academy</span>
+                                <span class="stat-academy-sub">Computer Software<br>Engineering Education</span>
                             </div>
                         </div>
-                        <div class="hero-stat">
-                            <div class="stat-body">
-                                <p class="stat-title">
-                                    <span class="flag-row">
-                                        <img src="https://flagcdn.com/w20/us.png" alt="English" title="English" />
-                                        <img src="https://flagcdn.com/w20/ru.png" alt="Russian" title="Russian" />
-                                        <img src="https://flagcdn.com/w20/ua.png" alt="Ukrainian" title="Ukrainian" />
-                                    </span>
-                                    <span class="countup" data-target="3">0</span> Languages
-                                </p>
-                                <p class="stat-sub">English · Russian · Ukrainian</p>
-                            </div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="stat-body">
-                                <p class="stat-title">
-                                    <img src="assets/img/academy.png" alt="IT STEP Academy" class="academy-logo" />
-                                    IT STEP Academy
-                                </p>
-                                <p class="stat-sub">Computer Science Education</p>
-                            </div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="stat-body">
-                                <p class="stat-title">Charlotte, NC</p>
-                                <p class="stat-sub">Available for opportunities</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
                     </div>
                 </div>
 
@@ -87,6 +66,10 @@
             </div>
         </div>
         <canvas class="hero-particles" aria-hidden="true"></canvas>
+        <div class="hero-actions-bottom">
+            <a href="#projects" class="btn btn-secondary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
         <a href="#projects" class="hero-explore">
             <span class="hero-explore-label">Explore</span>
             <span class="hero-explore-arrow">
@@ -98,204 +81,216 @@
     </section>
 
 
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-head">
-                <p class="section-label">Portfolio</p>
-                <h2>Featured Projects</h2>
-            </div>
-            <div class="projects-grid projects-single">
-
-
-                <article class="project-card">
-                    <div class="project-preview">
-                        <img src="assets/img/projects/brhs-yearbook/home.png" alt="BRHS Yearbook - Home" class="project-preview-img" />
-                        <div class="project-preview-overlay">
-                            <a href="https://www.brhsyearbook.com" target="_blank" class="project-preview-btn">Visit Site</a>
-                        </div>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-card-top">
-                            <span class="project-tag">Web Design</span>
-                            <a href="https://www.brhsyearbook.com" target="_blank" class="project-live">
-                                <span class="live-dot"></span>
-                                Live Site
-                            </a>
-                        </div>
-                        <h3>Ballantyne Ridge High School – Yearbook</h3>
-                        <ul class="project-bullets">
-                            <li>Assisted the yearbook club adviser by building a website to help students explore pricing, browse photos, and engage more with the yearbook program</li>
-                            <li>Featured dedicated sections for athletic highlights from games, student life photo dumps, and a page honoring the graduating senior class</li>
-                            <li>Contributed to promoting the yearbook by creating school-wide announcements and promotional materials to boost student awareness and drive sales</li>
-                        </ul>
-                        <div class="project-stats">
-                            <div class="project-stat">
-                                <span class="project-stat-coming">Coming Soon</span>
-                                <span class="project-stat-label">Stats</span>
-                            </div>
-                            <div class="project-stat project-stat-tech">
-                                <div class="project-tech-icons">
-                                    <img src="assets/img/icons/html.png" alt="HTML" title="HTML" />
-                                    <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
-                                    <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
-                                </div>
-                                <span class="project-stat-label">Made with</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="project-card">
-                    <div class="project-preview">
-                        <img src="assets/img/projects/brhs-prom-2026/home.png" alt="BRHS Prom - Home" class="project-preview-img" />
-                        <div class="project-preview-overlay">
-                            <a href="https://www.brhsprom26.com" target="_blank" class="project-preview-btn">Visit Site</a>
-                        </div>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-card-top">
-                            <span class="project-tag">Web Design</span>
-                            <a href="https://www.brhsprom26.com" target="_blank" class="project-live">
-                                <span class="live-dot"></span>
-                                Live Site
-                            </a>
-                        </div>
-                        <h3>Ballantyne Ridge High School – Prom 2026</h3>
-                        <ul class="project-bullets">
-                            <li>Collaborated with the prom committee on event setup and decorations</li>
-                            <li>Designed and built a fully functional website that centralized event information, updates, FAQs, and ticket purchasing</li>
-                            <li>Contributed to promoting the event by creating school-wide announcements and promotional materials to boost student awareness and engagement</li>
-                        </ul>
-                        <div class="project-stats">
-                            <div class="project-stat">
-                                <span class="project-stat-num">500+</span>
-                                <span class="project-stat-label">People reached</span>
-                            </div>
-                            <div class="project-stat">
-                                <span class="project-stat-num">250/250</span>
-                                <span class="project-stat-label">Tickets sold out</span>
-                            </div>
-                            <div class="project-stat project-stat-tech">
-                                <div class="project-tech-icons">
-                                    <img src="assets/img/icons/laravel-logo.png" alt="Blade" title="Blade (Laravel)" />
-                                    <img src="assets/img/icons/php.png" alt="PHP" title="PHP" />
-                                    <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
-                                    <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
-                                </div>
-                                <span class="project-stat-label">Made with</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-
-    <section id="education" class="section">
-        <div class="container">
-            <div class="section-head">
-                <p class="section-label">Education</p>
-                <h2>Certifications</h2>
-            </div>
-            <div class="certs-grid">
-
-                <div class="certs-row certs-row-diplomas">
-                    <div class="cert-card cert-card-wide">
-                        <div class="cert-img-wrap cert-img-landscape">
-                            <img src="assets/img/certs/junior.png" alt="Junior Computer Academy Diploma" />
-                        </div>
-                        <div class="cert-info">
-                            <p class="cert-name">Junior Computer Academy STEP</p>
-                            <p class="cert-meta">DNMA-024885 &nbsp;·&nbsp; 2019 – 2022</p>
-                        </div>
-                    </div>
-                    <div class="cert-card cert-card-wide">
-                        <div class="cert-img-wrap cert-img-landscape">
-                            <img src="assets/img/certs/senior.jpg" alt="Software Development Diploma" />
-                        </div>
-                        <div class="cert-info">
-                            <p class="cert-name">Software Development Diploma</p>
-                            <p class="cert-meta">DN-251015 &nbsp;·&nbsp; 2022 – 2025</p>
-                        </div>
-                    </div>
+    <div class="bonfire-zone">
+        <canvas class="bonfire-canvas" aria-hidden="true"></canvas>
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">Portfolio</p>
+                    <h2>Featured Projects</h2>
                 </div>
+                <div class="projects-grid projects-single">
 
-                <div class="certs-row certs-row-transcripts">
-                    <div class="cert-card">
-                        <div class="cert-img-wrap">
-                            <img src="assets/img/certs/junior-courses.jpg" alt="Junior Academy Course List" />
+
+                    <article class="project-card">
+                        <div class="project-preview">
+                            <img src="assets/img/projects/brhs-yearbook/home.png" alt="BRHS Yearbook - Home" class="project-preview-img" />
+                            <div class="project-preview-overlay">
+                                <a href="https://www.brhsyearbook.com" target="_blank" class="project-preview-btn">Visit Site</a>
+                            </div>
                         </div>
-                        <div class="cert-info">
-                            <p class="cert-name">Junior Academy – Course Transcript</p>
-                            <p class="cert-meta">DNMA-024885 &nbsp;·&nbsp; 2019 – 2022</p>
+                        <div class="project-card-body">
+                            <div class="project-card-top">
+                                <span class="project-tag">Web Design</span>
+                                <a href="https://www.brhsyearbook.com" target="_blank" class="project-live">
+                                    <span class="live-dot"></span>
+                                    Live Site
+                                </a>
+                            </div>
+                            <h3>Ballantyne Ridge High School – Yearbook</h3>
+                            <ul class="project-bullets">
+                                <li>Assisted the yearbook club adviser by building a website to help students explore pricing, browse photos, and engage more with the yearbook program</li>
+                                <li>Featured dedicated sections for athletic highlights from games, student life photo dumps, and a page honoring the graduating senior class</li>
+                                <li>Contributed to promoting the yearbook by creating school-wide announcements and promotional materials to boost student awareness and drive sales</li>
+                            </ul>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <span class="project-stat-coming">Coming Soon</span>
+                                    <span class="project-stat-label">Stats</span>
+                                </div>
+                                <div class="project-stat">
+                                    <span class="project-stat-num project-stat-hours">48h</span>
+                                    <span class="project-stat-label">Built in</span>
+                                </div>
+                                <div class="project-stat project-stat-tech">
+                                    <div class="project-tech-icons">
+                                        <img src="assets/img/icons/html.png" alt="HTML" title="HTML" />
+                                        <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
+                                        <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
+                                    </div>
+                                    <span class="project-stat-label">Made with</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-img-wrap">
-                            <img src="assets/img/certs/senior-courses.jpg" alt="Software Development Course List" />
+                    </article>
+
+
+                    <article class="project-card">
+                        <div class="project-preview">
+                            <img src="assets/img/projects/brhs-prom-2026/home.png" alt="BRHS Prom - Home" class="project-preview-img" />
+                            <div class="project-preview-overlay">
+                                <a href="https://www.brhsprom26.com" target="_blank" class="project-preview-btn">Visit Site</a>
+                            </div>
                         </div>
-                        <div class="cert-info">
-                            <p class="cert-name">Software Development – Course Transcript</p>
-                            <p class="cert-meta">DN-251015 &nbsp;·&nbsp; 2022 – 2025</p>
+                        <div class="project-card-body">
+                            <div class="project-card-top">
+                                <span class="project-tag">Web Design</span>
+                                <a href="https://www.brhsprom26.com" target="_blank" class="project-live">
+                                    <span class="live-dot"></span>
+                                    Live Site
+                                </a>
+                            </div>
+                            <h3>Ballantyne Ridge High School – Prom 2026</h3>
+                            <ul class="project-bullets">
+                                <li>Collaborated with the prom committee on event setup and decorations</li>
+                                <li>Designed and built a fully functional website that centralized event information, updates, FAQs, and ticket purchasing</li>
+                                <li>Contributed to promoting the event by creating school-wide announcements and promotional materials to boost student awareness and engagement</li>
+                            </ul>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <span class="project-stat-num">500+</span>
+                                    <span class="project-stat-label">People reached</span>
+                                </div>
+                                <div class="project-stat">
+                                    <span class="project-stat-num">250/250</span>
+                                    <span class="project-stat-label">Tickets sold out</span>
+                                </div>
+                                <div class="project-stat">
+                                    <span class="project-stat-num project-stat-hours">24h</span>
+                                    <span class="project-stat-label">Built in</span>
+                                </div>
+                                <div class="project-stat project-stat-tech">
+                                    <div class="project-tech-icons">
+                                        <img src="assets/img/icons/laravel-logo.png" alt="Blade" title="Blade (Laravel)" />
+                                        <img src="assets/img/icons/php.png" alt="PHP" title="PHP" />
+                                        <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
+                                        <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
+                                    </div>
+                                    <span class="project-stat-label">Made with</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </article>
+
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-head">
-                <p class="section-label">Skills</p>
-                <h2>Technologies I Use</h2>
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">Education</p>
+                    <h2>Certifications</h2>
+                </div>
+                <div class="certs-grid">
+
+                    <div class="certs-row certs-row-diplomas">
+                        <div class="cert-card cert-card-wide">
+                            <div class="cert-img-wrap cert-img-landscape">
+                                <img src="assets/img/certs/junior.png" alt="Junior Computer Academy Diploma" />
+                            </div>
+                            <div class="cert-info">
+                                <p class="cert-name">Junior Computer Academy STEP</p>
+                                <p class="cert-meta">DNMA-024885 &nbsp;·&nbsp; 2019 – 2022</p>
+                            </div>
+                        </div>
+                        <div class="cert-card cert-card-wide">
+                            <div class="cert-img-wrap cert-img-landscape">
+                                <img src="assets/img/certs/senior.jpg" alt="Software Development Diploma" />
+                            </div>
+                            <div class="cert-info">
+                                <p class="cert-name">Software Development Diploma</p>
+                                <p class="cert-meta">DN-251015 &nbsp;·&nbsp; 2022 – 2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certs-row certs-row-transcripts">
+                        <div class="cert-card">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/certs/junior-courses.jpg" alt="Junior Academy Course List" />
+                            </div>
+                            <div class="cert-info">
+                                <p class="cert-name">Junior Academy – Course Transcript</p>
+                                <p class="cert-meta">DNMA-024885 &nbsp;·&nbsp; 2019 – 2022</p>
+                            </div>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-img-wrap">
+                                <img src="assets/img/certs/senior-courses.jpg" alt="Software Development Course List" />
+                            </div>
+                            <div class="cert-info">
+                                <p class="cert-name">Software Development – Course Transcript</p>
+                                <p class="cert-meta">DN-251015 &nbsp;·&nbsp; 2022 – 2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="skills-grid">
+        </section>
 
-                <article class="skill-group">
-                    <h3>Front-End</h3>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/img/icons/html.png" alt="HTML" /><span>HTML</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/css-3.png" alt="CSS" /><span>CSS</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/java-script.png" alt="JavaScript" /><span>JavaScript</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/react.png" alt="React" /><span>React</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/angular.png" alt="Angular" /><span>Angular</span></div>
-                    </div>
-                </article>
 
-                <article class="skill-group">
-                    <h3>Back-End / Database</h3>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/img/icons/node-js.png" alt="Node.js" /><span>Node.js</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/php.png" alt="PHP" /><span>PHP</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/laravel-logo.png" alt="Laravel" /><span>Laravel</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/net.png" alt="ASP.NET" /><span>ASP.NET</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/wordpress.png" alt="WordPress" /><span>WordPress</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/database.png" alt="MySQL" /><span>MySQL</span></div>
-                    </div>
-                </article>
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <p class="section-label">Skills</p>
+                    <h2>Technologies I Use</h2>
+                </div>
+                <div class="skills-grid">
 
-                <article class="skill-group">
-                    <h3>Software Development</h3>
-                    <div class="skill-items">
-                        <div class="skill-item"><img src="assets/img/icons/c-.png" alt="C++" /><span>C++</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/c-sharp.png" alt="C#" /><span>C#</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/python.png" alt="Python" /><span>Python</span></div>
-                        <div class="skill-item"><img src="assets/img/icons/java.png" alt="Java" /><span>Java</span></div>
-                    </div>
-                </article>
+                    <article class="skill-group">
+                        <h3>Front-End</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><img src="assets/img/icons/html.png" alt="HTML" /><span>HTML</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/css-3.png" alt="CSS" /><span>CSS</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/java-script.png" alt="JavaScript" /><span>JavaScript</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/react.png" alt="React" /><span>React</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/angular.png" alt="Angular" /><span>Angular</span></div>
+                        </div>
+                    </article>
 
+                    <article class="skill-group">
+                        <h3>Back-End / Database</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><img src="assets/img/icons/node-js.png" alt="Node.js" /><span>Node.js</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/php.png" alt="PHP" /><span>PHP</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/laravel-logo.png" alt="Laravel" /><span>Laravel</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/net.png" alt="ASP.NET" /><span>ASP.NET</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/wordpress.png" alt="WordPress" /><span>WordPress</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/database.png" alt="MySQL" /><span>MySQL</span></div>
+                        </div>
+                    </article>
+
+                    <article class="skill-group">
+                        <h3>Software Development</h3>
+                        <div class="skill-items">
+                            <div class="skill-item"><img src="assets/img/icons/c-.png" alt="C++" /><span>C++</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/c-sharp.png" alt="C#" /><span>C#</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/python.png" alt="Python" /><span>Python</span></div>
+                            <div class="skill-item"><img src="assets/img/icons/java.png" alt="Java" /><span>Java</span></div>
+                        </div>
+                    </article>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
 
     <section id="contact" class="section contact-section">
+        <canvas class="contact-particles" aria-hidden="true"></canvas>
         <div class="container">
             <div class="section-head">
                 <p class="section-label">Contact</p>
