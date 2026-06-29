@@ -583,6 +583,36 @@
     font-weight: 600;
 }
 
+.about-modal-langs {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 185, 80, 0.16);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-langs-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 160, 50, 0.8);
+}
+
+.about-langs-list {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.02em;
+}
+
+.about-langs-dot {
+    color: rgba(255, 160, 50, 0.7);
+    margin: 0 6px;
+    font-weight: 400;
+}
+
 @keyframes heroRiseIn {
     from {
         opacity: 0;
