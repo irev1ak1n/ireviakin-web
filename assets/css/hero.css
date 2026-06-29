@@ -218,12 +218,8 @@
 
 
 
-.hero-actions-bottom {
-    position: absolute;
-    bottom: 92px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4;
+.hero-actions {
+    margin-top: 44px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -236,8 +232,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-right: 20px;
-    padding-left: 40px;
+    padding-right: 60px;
 }
 
 .hero-oval {
@@ -264,51 +259,26 @@
     min-height: 100%;
 }
 
-.hero-portrait-wrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-intro-bubble {
-    position: absolute;
-    bottom: calc(100% - 130px);
-    right: calc(100% - 130px);
-    width: 440px;
-    height: 250px;
+.hero-intro-box {
+    margin-top: 32px;
+    padding: 24px 28px;
+    max-width: 280px;
+    background: linear-gradient(160deg, rgba(10, 8, 20, 0.55), rgba(5, 4, 12, 0.45));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 185, 80, 0.14);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 200, 100, 0.05);
     opacity: 0;
-    animation: introBubbleIn 0.9s ease-out 1.1s forwards;
-    z-index: 4;
-}
-
-.hero-cloud-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    filter: drop-shadow(0 24px 50px rgba(0, 0, 0, 0.5));
-}
-
-.hero-cloud-path {
-    animation: cloudBob 6s ease-in-out infinite;
-    transform-origin: center;
+    animation: introBoxIn 0.8s ease-out 1.2s forwards;
 }
 
 .hero-intro-text {
-    position: absolute;
-    inset: 0;
     margin: 0;
-    padding: 48px 68px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 0.92rem;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.78);
     letter-spacing: 0.01em;
-    text-align: center;
 }
 
 .hero-intro-text strong {
@@ -316,68 +286,14 @@
     font-weight: 600;
 }
 
-.hero-cloud-trail {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%,
-    rgba(20, 16, 32, 0.85),
-    rgba(8, 6, 16, 0.7));
-    border: 1.5px solid rgba(255, 160, 60, 0.5);
-    opacity: 0;
-}
-
-.hero-cloud-trail-1 {
-    width: 26px;
-    height: 22px;
-    bottom: 6px;
-    right: 42px;
-    animation: trailPop 0.5s ease-out 1.5s forwards, cloudBob 6s ease-in-out 1.5s infinite;
-}
-
-.hero-cloud-trail-2 {
-    width: 17px;
-    height: 15px;
-    bottom: -22px;
-    right: 18px;
-    animation: trailPop 0.5s ease-out 1.7s forwards, cloudBob 6.5s ease-in-out 1.7s infinite;
-}
-
-.hero-cloud-trail-3 {
-    width: 10px;
-    height: 9px;
-    bottom: -44px;
-    right: 0px;
-    animation: trailPop 0.5s ease-out 1.9s forwards, cloudBob 7s ease-in-out 1.9s infinite;
-}
-
-@keyframes introBubbleIn {
+@keyframes introBoxIn {
     from {
         opacity: 0;
-        transform: translate(12px, -10px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
-        transform: translate(0, 0);
-    }
-}
-
-@keyframes trailPop {
-    from {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes cloudBob {
-    0%, 100% {
         transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
     }
 }
 
@@ -407,13 +323,12 @@
     line-height: 1;
 }
 
-.stat-exp-number .countup {
+.stat-exp-number .stat-exp-num {
     font-family: "Bebas Neue", sans-serif;
     font-size: 6rem;
     letter-spacing: -0.02em;
     color: #ffffff;
     display: inline-block;
-    transition: transform 0.1s ease;
 }
 
 .stat-exp-plus {
@@ -427,7 +342,7 @@
 
 .stat-exp-label {
     color: rgba(159, 168, 198, 0.85);
-    font-size: 0.82rem;
+    font-size: 0.96rem;
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: 0.01em;
@@ -454,13 +369,13 @@
 .stat-academy-name {
     color: #ffffff;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1.12rem;
     line-height: 1.2;
 }
 
 .stat-academy-sub {
     color: rgba(159, 168, 198, 0.8);
-    font-size: 0.78rem;
+    font-size: 0.92rem;
     font-weight: 500;
     line-height: 1.5;
 }
@@ -520,10 +435,6 @@
     opacity: 1;
 }
 
-.hero-explore {
-    animation: exploreBounce 2s ease-in-out infinite;
-}
-
 @keyframes exploreBounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(8px); }
@@ -532,5 +443,248 @@
 @media (max-width: 700px) {
     .hero-explore {
         bottom: 24px;
+    }
+}
+
+.nav-about-btn {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 14px 6px 10px;
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.nav-about-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 165, 70, 0.5);
+    background: rgba(255, 150, 50, 0.08);
+}
+
+.about-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px) saturate(1.4);
+    -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    background: rgba(2, 3, 7, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.about-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.about-modal {
+    position: relative;
+    width: 100%;
+    max-width: 660px;
+    margin: 0 24px;
+    padding: 48px 48px 44px;
+    background: linear-gradient(160deg, rgba(10, 8, 20, 0.45), rgba(5, 4, 12, 0.35));
+    border: 1px solid rgba(255, 185, 80, 0.18);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 200, 100, 0.06);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
+    opacity: 0;
+}
+
+.about-overlay.is-open .about-modal {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.about-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(120deg,
+    rgba(255, 160, 50, 0.6),
+    rgba(214, 92, 255, 0.2),
+    rgba(255, 100, 30, 0.6),
+    rgba(255, 200, 80, 0.4));
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderFlow 9s ease infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.about-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: color 0.2s ease;
+    line-height: 0;
+}
+
+.about-close:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-modal-eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 160, 50, 0.8);
+    margin-bottom: 10px;
+}
+
+.about-modal-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    margin: 0 0 20px;
+    line-height: 1;
+}
+
+.about-modal-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.about-modal-text strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+@keyframes heroRiseIn {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroPopIn {
+    0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.94);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.015);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes heroPhotoIn {
+    from {
+        opacity: 0;
+        transform: translateX(40px) scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.hero-stat-exp .stat-exp-number {
+    opacity: 0;
+    animation: heroPopIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s forwards;
+}
+
+.hero-stat-exp .stat-exp-label {
+    opacity: 0;
+    animation: heroRiseIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+.hero-stat-academy .academy-logo-big {
+    opacity: 0;
+    animation: heroPopIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s forwards;
+}
+
+.hero-stat-academy .stat-academy-text {
+    opacity: 0;
+    animation: heroRiseIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
+}
+
+.hero-actions .btn-ember {
+    opacity: 0;
+    animation: heroPopIn 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.hero-actions .btn-ember:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.hero-actions .btn-ember:nth-child(2) {
+    animation-delay: 1.12s;
+}
+
+.hero-image-side {
+    opacity: 0;
+    animation: heroPhotoIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+}
+
+@keyframes heroExploreIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.hero-explore {
+    opacity: 0;
+    animation:
+            heroExploreIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards,
+            exploreBounce 2s ease-in-out 2.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-stat-exp .stat-exp-number,
+    .hero-stat-exp .stat-exp-label,
+    .hero-stat-academy .academy-logo-big,
+    .hero-stat-academy .stat-academy-text,
+    .hero-actions .btn-ember,
+    .hero-image-side,
+    .hero-explore {
+        opacity: 1;
+        animation: none;
     }
 }

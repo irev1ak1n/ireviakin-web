@@ -243,6 +243,11 @@
     animation-delay: 1.4s;
 }
 
+.contact-link-call .contact-link-icon svg {
+    color: rgb(var(--card-accent));
+    animation: iconFloat 3s ease-in-out 1.4s infinite;
+}
+
 @keyframes iconFloat {
     0%, 100% {
         transform: translateY(0);
@@ -313,42 +318,8 @@
 }
 
 @media (max-width: 1200px) {
-    .hero-portrait-wrap {
-        flex-direction: column;
-    }
-
-    .hero-intro-bubble {
-        position: static;
-        width: 380px;
-        height: 220px;
-        margin: 48px auto 0;
-        animation: introBubbleInUp 0.9s ease-out 1.1s forwards;
-    }
-
-    .hero-intro-text {
-        padding: 44px 60px;
-        font-size: 0.88rem;
-    }
-
-    .hero-cloud-trail-1 {
-        top: -8px;
-        bottom: auto;
-        right: 50%;
-        transform: translateX(50%);
-    }
-
-    .hero-cloud-trail-2 {
-        top: -30px;
-        bottom: auto;
-        right: 50%;
-        transform: translateX(50%);
-    }
-
-    .hero-cloud-trail-3 {
-        top: -48px;
-        bottom: auto;
-        right: 50%;
-        transform: translateX(50%);
+    .hero-intro-box {
+        margin-top: 24px;
     }
 }
 

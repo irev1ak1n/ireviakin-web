@@ -31,6 +31,13 @@
             <a href="#contact">Contact</a>
         </nav>
     </div>
+    <button class="nav-about-btn" id="aboutBtn" aria-label="About me">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span>About</span>
+    </button>
 </header>
 
 <main>
@@ -44,7 +51,7 @@
                     <div class="hero-stats">
                         <div class="hero-stat hero-stat-exp">
                             <div class="stat-exp-number">
-                                <span class="countup" data-target="9">0</span><span class="stat-exp-plus">+</span>
+                                <span class="stat-exp-num">9</span><span class="stat-exp-plus">+</span>
                             </div>
                             <div class="stat-exp-label">Years of hands-on<br>experience</div>
                         </div>
@@ -56,42 +63,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-ember btn-ember-ghost">View Projects</a>
+                        <a href="#contact" class="btn-ember btn-ember-ghost">Contact Me</a>
+                    </div>
                 </div>
 
                 <div class="hero-image-side">
-                    <div class="hero-portrait-wrap">
-                        <div class="hero-intro-bubble">
-                            <svg class="hero-cloud-svg" viewBox="0 0 440 250" preserveAspectRatio="none" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="cloudFill" x1="0" y1="0" x2="1" y2="1">
-                                        <stop offset="0" stop-color="rgba(10,8,20,0.62)" />
-                                        <stop offset="1" stop-color="rgba(5,4,12,0.5)" />
-                                    </linearGradient>
-                                    <linearGradient id="cloudStroke" x1="0" y1="0" x2="1" y2="1">
-                                        <stop offset="0" stop-color="rgba(255,160,50,0.6)" />
-                                        <stop offset="0.5" stop-color="rgba(214,92,255,0.3)" />
-                                        <stop offset="1" stop-color="rgba(255,120,40,0.55)" />
-                                    </linearGradient>
-                                </defs>
-                                <path class="hero-cloud-path" d="M90,58 C84,34 114,16 142,28 C158,10 196,10 214,26 C236,10 278,18 284,44 C316,36 348,58 342,88 C370,96 380,132 356,152 C370,178 350,212 318,206 C308,230 268,238 248,220 C228,238 186,238 166,220 C142,234 104,226 96,198 C64,204 36,178 46,148 C20,136 18,96 48,82 C38,64 56,48 90,58 Z" fill="url(#cloudFill)" stroke="url(#cloudStroke)" stroke-width="1.5" />
-                            </svg>
-                            <p class="hero-intro-text">Hi, I'm <strong>Illia Reviakin</strong> — a full-stack web developer with <strong>9+ years</strong> of hands-on experience across front-end, back-end, and software development. I'm also multilingual: full professional proficiency in <strong>English</strong>, native <strong>Russian</strong> and <strong>Ukrainian</strong>.</p>
-                            <span class="hero-cloud-trail hero-cloud-trail-1"></span>
-                            <span class="hero-cloud-trail hero-cloud-trail-2"></span>
-                            <span class="hero-cloud-trail hero-cloud-trail-3"></span>
-                        </div>
-                        <div class="hero-oval">
-                            <img src="assets/img/1.jpg" alt="Illia Reviakin" />
-                        </div>
+                    <div class="hero-oval">
+                        <img src="assets/img/1.jpg" alt="Illia Reviakin" />
                     </div>
                 </div>
             </div>
         </div>
         <canvas class="hero-particles" aria-hidden="true"></canvas>
-        <div class="hero-actions-bottom">
-            <a href="#projects" class="btn btn-secondary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
-        </div>
         <a href="#projects" class="hero-explore">
             <span class="hero-explore-label">Explore</span>
             <span class="hero-explore-arrow">
@@ -372,6 +357,21 @@
         <path d="M9 14.5V3.5M9 3.5L4 8.5M9 3.5L14 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
 </button>
+
+<div class="about-overlay" id="aboutOverlay" aria-hidden="true">
+    <div class="about-modal" role="dialog" aria-modal="true" aria-label="About Illia Reviakin">
+        <button class="about-close" id="aboutClose" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <div class="about-modal-inner">
+            <span class="about-modal-eyebrow">About Me</span>
+            <h2 class="about-modal-name">Illia Reviakin</h2>
+            <p class="about-modal-text">Hi, I'm Illia Reviakin, a full-stack web developer and software engineer with over 9 years of experience building websites and apps across a wide variety of technologies and industries. I recently made the move into freelancing after graduating from IT STEP Computer Academy, and I'm actively looking for projects to work on. Let's connect and build something together.</p>
+        </div>
+    </div>
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>

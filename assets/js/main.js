@@ -1,50 +1,3 @@
-function easeOutExpo(t) {
-    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-}
-
-function animateCountup(el) {
-    const target = parseInt(el.getAttribute('data-target'));
-    const duration = 3200;
-    const start = performance.now();
-
-    function frame(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutExpo(progress);
-        const current = Math.round(eased * target);
-        el.textContent = current;
-
-        if (el.classList.contains('countup-scale')) {
-            const scale = 1 + (1 - eased) * 0.06;
-            el.style.transform = `scale(${scale})`;
-        }
-
-        if (progress < 1) {
-            requestAnimationFrame(frame);
-        } else {
-            el.textContent = target;
-            el.style.transform = '';
-        }
-    }
-
-    requestAnimationFrame(frame);
-}
-
-const countups = document.querySelectorAll('.countup');
-const countupObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCountup(entry.target);
-            countupObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.4 });
-
-countups.forEach(el => {
-    el.classList.add('countup-scale');
-    countupObserver.observe(el);
-});
-
 const contactLinks = document.querySelectorAll('#contact .contact-link');
 const contactLinksWrap = document.querySelector('.contact-links');
 if (contactLinks.length && contactLinksWrap && 'IntersectionObserver' in window) {
@@ -333,4 +286,33 @@ if (scrollProgressEl) {
         requestAnimationFrame(draw);
     }
     draw();
+})();
+
+(function () {
+    const btn = document.getElementById('aboutBtn');
+    const overlay = document.getElementById('aboutOverlay');
+    const closeBtn = document.getElementById('aboutClose');
+
+    function openAbout() {
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        closeBtn.focus();
+    }
+
+    function closeAbout() {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        btn.focus();
+    }
+
+    btn.addEventListener('click', openAbout);
+    closeBtn.addEventListener('click', closeAbout);
+
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeAbout();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeAbout();
+    });
 })();
