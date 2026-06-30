@@ -899,19 +899,30 @@ body.menu-locked {
         padding: 0 20px;
     }
 
+    /* 1 — Profile picture on top */
     body .hero-content .hero-image-side {
-        order: -1 !important;
+        order: 1 !important;
         justify-content: center;
         padding-right: 0;
         width: 100%;
     }
 
+    /* 2 — Text column (stats + buttons) below the photo */
     body .hero-content .hero-text-side {
-        order: 1 !important;
+        order: 2 !important;
         padding-left: 0;
         margin-top: 0;
         align-items: center;
         width: 100%;
+    }
+
+    /* inside the text column: 9+/academy first, then buttons */
+    .hero-text-side .hero-stats {
+        order: 1;
+    }
+
+    .hero-text-side .hero-actions {
+        order: 2;
     }
 
     .hero-oval {
