@@ -291,3 +291,13 @@
     background: rgba(214, 92, 255, 0.2);
     border-color: rgba(214, 92, 255, 0.4);
 }
+
+.projects-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+}
+
+#projects {
+    padding-bottom: 0;
+}

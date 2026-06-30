@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Illia Reviakin | Projects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/core/global.css" />
+    <link rel="stylesheet" href="assets/css/hero.css?v=3" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+    <link rel="stylesheet" href="assets/css/all-projects.css" />
+    <link rel="stylesheet" href="assets/css/contact-responsive.css" />
+
+    <style>
+        /* Lift all-projects sections above the bonfire-zone bg image, overlay and particle canvas */
+        .bonfire-zone > .all-projects-hero,
+        .bonfire-zone > .all-projects-grid {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header">
+    <div class="container nav">
+        <nav class="nav-links nav-links-left">
+            <a href="projects.html" class="nav-active">Projects</a>
+            <a href="index.html#education">Education</a>
+        </nav>
+        <a href="index.html" class="brand">Illia Reviakin</a>
+        <nav class="nav-links nav-links-right">
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </div>
+    <button class="nav-about-btn" id="aboutBtn" aria-label="About me">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span>About</span>
+    </button>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="mobile-menu-bar"></span>
+        <span class="mobile-menu-bar"></span>
+        <span class="mobile-menu-bar"></span>
+    </button>
+</header>
+
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+        <span class="mobile-menu-eyebrow">Menu</span>
+        <a href="projects.html" class="mobile-menu-link mobile-menu-link-page nav-active">Projects</a>
+        <a href="index.html#education" class="mobile-menu-link">Education</a>
+        <a href="index.html#skills" class="mobile-menu-link">Skills</a>
+        <a href="index.html#contact" class="mobile-menu-link">Contact</a>
+        <a href="#" class="mobile-menu-link mobile-menu-link-about" id="mobileMenuAbout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+            About Me
+        </a>
+    </div>
+</nav>
+
+<main>
+
+    <div class="bonfire-zone">
+        <canvas class="bonfire-canvas" aria-hidden="true"></canvas>
+
+        <section class="all-projects-hero">
+            <div class="container">
+                <a href="index.html" class="all-projects-back">
+                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 3.5L5.5 9L11 14.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back to Home
+                </a>
+                <p class="section-label">Portfolio</p>
+                <h1>All Projects</h1>
+            </div>
+        </section>
+
+        <section class="all-projects-grid">
+            <div class="container">
+                <div class="projects-grid projects-single">
+
+                    <article class="project-card">
+                        <div class="project-preview">
+                            <img src="assets/img/projects/brhs-yearbook/home.png" alt="BRHS Yearbook - Home" class="project-preview-img" />
+                            <div class="project-preview-overlay">
+                                <a href="https://www.brhsyearbook.com" target="_blank" class="project-preview-btn">Visit Site</a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-card-top">
+                                <span class="project-tag">Web Design</span>
+                                <a href="https://www.brhsyearbook.com" target="_blank" class="project-live">
+                                    <span class="live-dot"></span>
+                                    Live Site
+                                </a>
+                            </div>
+                            <h3>Ballantyne Ridge High School – Yearbook</h3>
+                            <ul class="project-bullets">
+                                <li>Assisted the yearbook club adviser by building a website to help students explore pricing, browse photos, and engage more with the yearbook program</li>
+                                <li>Featured dedicated sections for athletic highlights from games, student life photo dumps, and a page honoring the graduating senior class</li>
+                                <li>Contributed to promoting the yearbook by creating school-wide announcements and promotional materials to boost student awareness and drive sales</li>
+                            </ul>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <span class="project-stat-coming">Coming Soon</span>
+                                    <span class="project-stat-label">Stats</span>
+                                </div>
+                                <div class="project-stat">
+                                    <span class="project-stat-num project-stat-hours">48h</span>
+                                    <span class="project-stat-label">Built in</span>
+                                </div>
+                                <div class="project-stat project-stat-tech">
+                                    <div class="project-tech-icons">
+                                        <img src="assets/img/icons/html.png" alt="HTML" title="HTML" />
+                                        <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
+                                        <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
+                                    </div>
+                                    <span class="project-stat-label">Made with</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="project-card">
+                        <div class="project-preview">
+                            <img src="assets/img/projects/brhs-prom-2026/home.png" alt="BRHS Prom - Home" class="project-preview-img" />
+                            <div class="project-preview-overlay">
+                                <a href="https://www.brhsprom26.com" target="_blank" class="project-preview-btn">Visit Site</a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-card-top">
+                                <span class="project-tag">Web Design</span>
+                                <a href="https://www.brhsprom26.com" target="_blank" class="project-live">
+                                    <span class="live-dot"></span>
+                                    Live Site
+                                </a>
+                            </div>
+                            <h3>Ballantyne Ridge High School – Prom 2026</h3>
+                            <ul class="project-bullets">
+                                <li>Collaborated with the prom committee on event setup and decorations</li>
+                                <li>Designed and built a fully functional website that centralized event information, updates, FAQs, and ticket purchasing</li>
+                                <li>Contributed to promoting the event by creating school-wide announcements and promotional materials to boost student awareness and engagement</li>
+                            </ul>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <span class="project-stat-num">500+</span>
+                                    <span class="project-stat-label">People reached</span>
+                                </div>
+                                <div class="project-stat">
+                                    <span class="project-stat-num">250/250</span>
+                                    <span class="project-stat-label">Tickets sold out</span>
+                                </div>
+                                <div class="project-stat">
+                                    <span class="project-stat-num project-stat-hours">24h</span>
+                                    <span class="project-stat-label">Built in</span>
+                                </div>
+                                <div class="project-stat project-stat-tech">
+                                    <div class="project-tech-icons">
+                                        <img src="assets/img/icons/laravel-logo.png" alt="Blade" title="Blade (Laravel)" />
+                                        <img src="assets/img/icons/php.png" alt="PHP" title="PHP" />
+                                        <img src="assets/img/icons/java-script.png" alt="JavaScript" title="JavaScript" />
+                                        <img src="assets/img/icons/css-3.png" alt="CSS" title="CSS" />
+                                    </div>
+                                    <span class="project-stat-label">Made with</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 14.5V3.5M9 3.5L4 8.5M9 3.5L14 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</button>
+
+<div class="about-overlay" id="aboutOverlay" aria-hidden="true">
+    <div class="about-modal" role="dialog" aria-modal="true" aria-label="About Illia Reviakin">
+        <button class="about-close" id="aboutClose" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <div class="about-modal-inner">
+            <span class="about-modal-eyebrow">About Me</span>
+            <h2 class="about-modal-name">Illia Reviakin</h2>
+            <p class="about-modal-text">Hi, I'm <strong>Illia Reviakin</strong>, a full-stack web developer and software engineer with over 9 years of experience building websites and apps across a wide variety of technologies and industries. I recently made the move into freelancing after graduating from <strong>IT STEP Computer Academy</strong>, and I'm actively looking for projects to work on. Let's connect and build something together.</p>
+            <div class="about-modal-langs">
+                <span class="about-langs-label">Languages</span>
+                <span class="about-langs-list">Russian <span class="about-langs-dot">·</span> Ukrainian <span class="about-langs-dot">·</span> English</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
