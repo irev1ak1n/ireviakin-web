@@ -301,3 +301,64 @@
 #projects {
     padding-bottom: 0;
 }
+
+@media (max-width: 600px) {
+    .projects-grid {
+        gap: 26px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        border-radius: 16px;
+    }
+
+    .project-card-body {
+        padding: 20px 16px 22px;
+    }
+
+    .project-card-body h3 {
+        font-size: 1.3rem;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .project-bullets {
+        padding-left: 18px;
+    }
+    .project-bullets li {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .project-card-top {
+        gap: 10px;
+    }
+    .project-tag,
+    .project-live {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+    }
+
+    .project-stats {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    .project-stat-num,
+    .project-stat-coming {
+        font-size: 1rem;
+    }
+    .project-stat-label {
+        font-size: 0.64rem;
+    }
+    .project-tech-icons img {
+        width: 22px;
+        height: 22px;
+    }
+}
