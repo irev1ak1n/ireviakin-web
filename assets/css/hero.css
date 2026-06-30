@@ -890,9 +890,17 @@ body.menu-locked {
     }
 
     .hero-image-side {
-        order: -1;
+        order: 1;
         justify-content: center;
         padding-right: 0;
+        width: 100%;
+    }
+
+    .hero-text-side {
+        order: 2;
+        padding-left: 0;
+        margin-top: 0;
+        align-items: center;
         width: 100%;
     }
 
@@ -903,13 +911,6 @@ body.menu-locked {
 
     .hero-oval img {
         object-position: center center;
-    }
-
-    .hero-text-side {
-        padding-left: 0;
-        margin-top: 0;
-        align-items: center;
-        width: 100%;
     }
 
     .hero-stats {
