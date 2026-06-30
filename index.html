@@ -38,7 +38,30 @@
         </svg>
         <span>About</span>
     </button>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="mobile-menu-bar"></span>
+        <span class="mobile-menu-bar"></span>
+        <span class="mobile-menu-bar"></span>
+    </button>
 </header>
+
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+        <span class="mobile-menu-eyebrow">Menu</span>
+        <a href="projects.html" class="mobile-menu-link mobile-menu-link-page">Projects</a>
+        <a href="#education" class="mobile-menu-link">Education</a>
+        <a href="#skills" class="mobile-menu-link">Skills</a>
+        <a href="#contact" class="mobile-menu-link">Contact</a>
+        <a href="#" class="mobile-menu-link mobile-menu-link-about" id="mobileMenuAbout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+            About Me
+        </a>
+    </div>
+</nav>
 
 <main>
 

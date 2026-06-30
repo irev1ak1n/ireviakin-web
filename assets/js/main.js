@@ -288,10 +288,13 @@ if (scrollProgressEl) {
     draw();
 })();
 
+let openAboutModal = function () {};
+
 (function () {
     const btn = document.getElementById('aboutBtn');
     const overlay = document.getElementById('aboutOverlay');
     const closeBtn = document.getElementById('aboutClose');
+    if (!btn || !overlay || !closeBtn) return;
 
     function openAbout() {
         overlay.classList.add('is-open');
@@ -315,4 +318,60 @@ if (scrollProgressEl) {
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeAbout();
     });
+
+    openAboutModal = openAbout;
+})();
+
+(function () {
+    const toggle = document.getElementById('mobileMenuToggle');
+    const panel = document.getElementById('mobileMenu');
+    const backdrop = document.getElementById('mobileMenuBackdrop');
+    if (!toggle || !panel || !backdrop) return;
+
+    function openMenu() {
+        panel.classList.add('is-open');
+        backdrop.classList.add('is-open');
+        toggle.classList.add('is-active');
+        toggle.setAttribute('aria-expanded', 'true');
+        panel.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-locked');
+    }
+
+    function closeMenu() {
+        panel.classList.remove('is-open');
+        backdrop.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-locked');
+    }
+
+    toggle.addEventListener('click', function () {
+        if (panel.classList.contains('is-open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && panel.classList.contains('is-open')) closeMenu();
+    });
+
+    panel.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', function () {
+            closeMenu();
+        });
+    });
+
+    const aboutItem = document.getElementById('mobileMenuAbout');
+    if (aboutItem) {
+        aboutItem.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeMenu();
+            setTimeout(openAboutModal, 320);
+        });
+    }
 })();
