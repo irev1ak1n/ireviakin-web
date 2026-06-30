@@ -894,12 +894,11 @@ body.menu-locked {
     }
 
     .hero-content {
-        flex-direction: column;
+        flex-direction: column !important;
         gap: 28px;
         padding: 0 20px;
     }
 
-    /* 1 — Profile picture on top */
     body .hero-content .hero-image-side {
         order: 1 !important;
         justify-content: center;
@@ -907,7 +906,6 @@ body.menu-locked {
         width: 100%;
     }
 
-    /* 2 — Text column (stats + buttons) below the photo */
     body .hero-content .hero-text-side {
         order: 2 !important;
         padding-left: 0;
@@ -916,7 +914,6 @@ body.menu-locked {
         width: 100%;
     }
 
-    /* inside the text column: 9+/academy first, then buttons */
     .hero-text-side .hero-stats {
         order: 1;
     }
