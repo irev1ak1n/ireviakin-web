@@ -375,3 +375,16 @@ let openAboutModal = function () {};
         });
     }
 })();
+(function () {
+    document.querySelectorAll('.project-slideshow').forEach(function (box) {
+        var track = box.querySelector('.slideshow-track');
+        var total = track.children.length;
+        var i = 0;
+        function go(n) {
+            i = (n + total) % total;
+            track.style.transform = 'translateX(-' + (i * 100) + '%)';
+        }
+        box.querySelector('.slideshow-prev').addEventListener('click', function () { go(i - 1); });
+        box.querySelector('.slideshow-next').addEventListener('click', function () { go(i + 1); });
+    });
+})();

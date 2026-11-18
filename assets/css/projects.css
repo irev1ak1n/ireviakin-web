@@ -353,3 +353,59 @@
         height: 22px;
     }
 }
+/* TSA HUB slideshow */
+.project-slideshow {
+    cursor: default;
+    aspect-ratio: 16 / 9;
+}
+
+.slideshow-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s ease;
+}
+
+.project-slideshow .project-preview-img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+}
+
+.project-slideshow .project-preview-img.is-contain {
+    object-fit: contain;
+    background: #0a0a10;
+}
+
+.project-slideshow:hover .project-preview-img {
+    transform: none;
+    filter: none;
+}
+
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(10, 10, 16, 0.6);
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.slideshow-arrow:hover {
+    opacity: 1;
+    background: rgba(10, 10, 16, 0.9);
+}
+
+.slideshow-prev { left: 10px; }
+.slideshow-next { right: 10px; }
