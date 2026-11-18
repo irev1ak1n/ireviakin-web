@@ -114,6 +114,16 @@
     cursor: default;
 }
 
+.skill-items-four {
+    gap: 10px;
+}
+
+.skill-items-four .skill-item {
+    width: calc((100% - 30px) / 4);
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
 .skill-item:hover {
     background: rgba(255, 255, 255, 0.09);
     border-color: rgba(214, 92, 255, 0.3);
