@@ -161,7 +161,7 @@
 }
 
 .project-bullets {
-    margin: 12px 0 0 0;
+    margin: 12px 0 24px 0;
     padding: 0;
     list-style: none;
     display: flex;
@@ -173,19 +173,9 @@
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.86);
     font-size: 0.9rem;
     line-height: 1.55;
-}
-
-.project-bullets li::before {
-    content: "";
-    flex-shrink: 0;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    margin-top: 7px;
 }
 
 .project-stats {
@@ -329,7 +319,7 @@
     }
 
     .project-bullets {
-        padding-left: 18px;
+        padding-left: 0;
     }
     .project-bullets li {
         font-size: 0.9rem;
