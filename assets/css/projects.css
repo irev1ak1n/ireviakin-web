@@ -424,3 +424,25 @@
 
 .slideshow-prev { left: 10px; }
 .slideshow-next { right: 10px; }
+
+.project-stat-github {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.project-stat-github img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.project-stat-github:hover {
+    transform: translateY(-2px);
+}
+
+.project-stat-github:hover .project-stat-label {
+    color: #fff;
+}
