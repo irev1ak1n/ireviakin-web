@@ -343,8 +343,29 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-preview">
-                            <video class="project-preview-img" src="assets/img/projects/hey-charlotte/hey-charlotte.mp4" poster="assets/img/projects/hey-charlotte/hey-charlotte.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Hey Charlotte - Home"></video>
+                        <div class="project-preview hc-preview">
+                            <video class="project-preview-img" src="assets/img/projects/hey-charlotte/hey-charlotte.mp4" poster="assets/img/projects/hey-charlotte/hey-charlotte.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Hey Charlotte - Home" data-hc-video></video>
+                                <div class="hc-ui" aria-hidden="true">
+                                    <div class="hc-header">
+                                        <nav class="hc-nav hc-nav-left"><span>Explore<i class="hc-caret"></i></span><span>Eat &amp; Drink<i class="hc-caret"></i></span><span>Living<i class="hc-caret"></i></span></nav>
+                                        <div class="hc-logo"><strong>Hey Charlotte</strong><em>We've got you</em></div>
+                                        <nav class="hc-nav hc-nav-right"><span>Work<i class="hc-caret"></i></span><span>Learn<i class="hc-caret"></i></span><span>City Resources<i class="hc-caret"></i></span>
+                                            <b class="hc-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></b>
+                                            <b class="hc-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></b>
+                                        </nav>
+                                    </div>
+                                    <div class="hc-explore"><span>Explore</span><i></i></div>
+                                </div>
+                                <div class="hc-controls">
+                                    <button type="button" class="hc-btn hc-mute" aria-label="Unmute video" aria-pressed="true">
+                                        <svg class="hc-ic-muted" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 4V5L7 9H3z"/><path d="M16 9.5l5 5M21 9.5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+                                        <svg class="hc-ic-sound" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 4V5L7 9H3z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+                                    </button>
+                                    <button type="button" class="hc-btn hc-pause" aria-label="Pause video" aria-pressed="false">
+                                        <svg class="hc-ic-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                                        <svg class="hc-ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>
+                                    </button>
+                                </div>
                                 <div class="project-preview-overlay">
                                     <a href="https://heycharlotte.vercel.app" target="_blank" class="project-preview-btn">Visit Site</a>
                                 </div>

@@ -388,3 +388,30 @@ let openAboutModal = function () {};
         box.querySelector('.slideshow-next').addEventListener('click', function () { go(i + 1); });
     });
 })();
+
+(function () {
+    document.querySelectorAll('.hc-preview').forEach(function (box) {
+        var video = box.querySelector('[data-hc-video]');
+        var mute = box.querySelector('.hc-mute');
+        var pause = box.querySelector('.hc-pause');
+        if (!video || !mute || !pause) return;
+
+        mute.addEventListener('click', function () {
+            video.muted = !video.muted;
+            mute.setAttribute('aria-pressed', String(video.muted));
+            mute.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
+            if (!video.muted && video.paused) { video.play().catch(function () {}); }
+        });
+
+        pause.addEventListener('click', function () {
+            if (video.paused) { video.play().catch(function () {}); } else { video.pause(); }
+        });
+
+        function syncPause() {
+            pause.setAttribute('aria-pressed', String(video.paused));
+            pause.setAttribute('aria-label', video.paused ? 'Resume video' : 'Pause video');
+        }
+        video.addEventListener('play', syncPause);
+        video.addEventListener('pause', syncPause);
+    });
+})();
